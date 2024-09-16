@@ -58,6 +58,102 @@ using static System.Console;
 //     return result;
 // }
 
-// task 55 
-// 
+// task 57 Составить частотный словарь эл-тов двумернрого массива. 
+// Словарь содержит информацию, сколько раз встречается элемент в массиве.
+// Clear();
+
+// Write("Введите количество строк массива ");
+// int m = int.Parse(ReadLine());
+// Write("Введите количество столбцов массива ");
+// int n = int.Parse(ReadLine());
+
+// int[,] array = GetArray(m, n, 0, 10);
+// PrintArray(array);
+// WriteLine();
+// int[] rowA = GetRowArray(array);
+// SortArray(rowA);
+
+// WriteLine(string.Join(" ",rowA));
+// WriteLine();
+// PrintData(rowA);
+
+
+// int[,] GetArray(int rows, int columns, int min, int max)
+// {
+//     int[,] result = new int[rows, columns];
+//     for (int i = 0; i < result.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < result.GetLength(1); j++)
+//         {
+//             result[i, j] = new Random().Next(min, max + 1);
+//         }
+//     }
+//     return result;
+// }
+
+// void PrintArray(int[,] inArray)
+// {
+//     for (int i = 0; i < inArray.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < inArray.GetLength(1); j++)
+//         {
+//             Write($"{inArray[i, j]} ");
+//         }
+//         WriteLine();
+//     }
+// }
+
+// int[] GetRowArray(int[,] inArray)
+// {
+//     int[] rowArray = new int[inArray.GetLength(1) * inArray.GetLength(0)];
+//     int index = 0;
+//     for (int i = 0; i < inArray.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < inArray.GetLength(1); j++)
+//         {
+//             rowArray[index] = inArray[i, j];
+//             index++;
+//         }
+//     }
+//     return rowArray;
+// }
+
+// void SortArray(int[] rowArray)
+// {
+//     for (int i = 0; i < rowArray.Length; i++) // сортировка пузырьком
+//     {
+//         for (int j = i + 1; j < rowArray.Length; j++)
+//         {
+//             if (rowArray[i] > rowArray[j])
+//             {
+//                 int k = rowArray[i];
+//                 rowArray[i] = rowArray[j];
+//                 rowArray[j] = k;
+//             }
+//         }
+//     }
+// }
+
+// void PrintData(int[] inArray)
+// {
+//     int el = inArray[0];
+//     int count =1;
+//     for (int i = 1; i < inArray.Length; i++)
+//     {
+//         if(inArray[i]!= el)
+//         {
+//             WriteLine($"{el} встречается {count} раз");
+//             el = inArray[i];
+//             count = 1;
+//         }
+//         else
+//         {
+//             count++;
+//         }
+//     }
+//     WriteLine($"{el} встречается {count} раз");
+// }
+
+// task 59 Из двумерного массива целых чисел удалить строку и столбц,
+// на пересечении которых расположен первый найденный наименьший элемент.
 Clear();

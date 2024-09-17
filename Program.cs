@@ -156,84 +156,120 @@ using static System.Console;
 
 // task 59 Из двумерного массива целых чисел удалить строку и столбц,
 // на пересечении которых расположен первый найденный наименьший элемент.
-Clear();
-Write("Введите количество строк массива ");
-int m = int.Parse(ReadLine());
-Write("Введите количество столбцов массива ");
-int n = int.Parse(ReadLine());
+// Clear();
+// Write("Введите количество строк массива ");
+// int m = int.Parse(ReadLine());
+// Write("Введите количество столбцов массива ");
+// int n = int.Parse(ReadLine());
 
-int[,] array = GetArray(m, n, 10, 99);
-PrintArray(array);
-WriteLine();
-WriteLine($"Минимальный элемент {String.Join(";", GetMinIndex(array))}");
-WriteLine();
-
-
-PrintArray(GetResultArray(array, GetMinIndex(array)));
-
-int[,] GetResultArray(int[,] inArray, int[] index)
-{
-    int[,] result = new int[inArray.GetLength(0) - 1, inArray.GetLength(1) - 1];
-    int row = 0;
-    int column = 0;
-    for (int i = 0; i < inArray.GetLength(0); i++)
-    {
-        if (i == index[0]) continue;
-        for (int j = 0; j < inArray.GetLength(1); j++)
-        {
-            if (j == index[1]) continue;
-            result[row, column] = inArray[i, j];
-            column++;
-        }
-        row++;
-        column = 0;
-    }
-    return result;
-}
+// int[,] array = GetArray(m, n, 10, 99);
+// PrintArray(array);
+// WriteLine();
+// WriteLine($"Минимальный элемент {String.Join(";", GetMinIndex(array))}");
+// WriteLine();
 
 
-int[] GetMinIndex(int[,] inArray)
+// PrintArray(GetResultArray(array, GetMinIndex(array)));
 
-{
-    int[] result = new int[] { 0, 0 };
-    int min = inArray[0, 0];
-    for (int i = 0; i < inArray.GetLength(0); i++)
-    {
-        for (int j = 0; j < inArray.GetLength(1); j++)
-        {
-            if (min > inArray[i, j])
-            {
-                min = inArray[i, j];
-                result[0] = i;
-                result[1] = j;
-            }
-        }
-    }
-    return result;
-}
+// int[,] GetResultArray(int[,] inArray, int[] index)
+// {
+//     int[,] result = new int[inArray.GetLength(0) - 1, inArray.GetLength(1) - 1];
+//     int row = 0;
+//     int column = 0;
+//     for (int i = 0; i < inArray.GetLength(0); i++)
+//     {
+//         if (i == index[0]) continue;
+//         for (int j = 0; j < inArray.GetLength(1); j++)
+//         {
+//             if (j == index[1]) continue;
+//             result[row, column] = inArray[i, j];
+//             column++;
+//         }
+//         row++;
+//         column = 0;
+//     }
+//     return result;
+// }
 
-int[,] GetArray(int rows, int columns, int min, int max)
-{
-    int[,] result = new int[rows, columns];
-    for (int i = 0; i < result.GetLength(0); i++)
-    {
-        for (int j = 0; j < result.GetLength(1); j++)
-        {
-            result[i, j] = new Random().Next(min, max + 1);
-        }
-    }
-    return result;
-}
 
-void PrintArray(int[,] inArray)
-{
-    for (int i = 0; i < inArray.GetLength(0); i++)
-    {
-        for (int j = 0; j < inArray.GetLength(1); j++)
-        {
-            Write($"{inArray[i, j]} ");
-        }
-        WriteLine();
-    }
-}
+// int[] GetMinIndex(int[,] inArray)
+
+// {
+//     int[] result = new int[] { 0, 0 };
+//     int min = inArray[0, 0];
+//     for (int i = 0; i < inArray.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < inArray.GetLength(1); j++)
+//         {
+//             if (min > inArray[i, j])
+//             {
+//                 min = inArray[i, j];
+//                 result[0] = i;
+//                 result[1] = j;
+//             }
+//         }
+//     }
+//     return result;
+// }
+
+// int[,] GetArray(int rows, int columns, int min, int max)
+// {
+//     int[,] result = new int[rows, columns];
+//     for (int i = 0; i < result.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < result.GetLength(1); j++)
+//         {
+//             result[i, j] = new Random().Next(min, max + 1);
+//         }
+//     }
+//     return result;
+// }
+
+// void PrintArray(int[,] inArray)
+// {
+//     for (int i = 0; i < inArray.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < inArray.GetLength(1); j++)
+//         {
+//             Write($"{inArray[i, j]} ");
+//         }
+//         WriteLine();
+//     }
+// }
+
+// task 61 Показать треугольник Паскаля. Сделать вывод в виде равнобедренного треугольника. 
+// По краям - единицы, нижний элемент явл сумммой эл-тов сверху.
+// Clear();
+// Write("Введите количество строк ");
+// int rows = int.Parse(ReadLine());
+// PrintTriangle(rows);
+
+// void PrintTriangle(int n)
+// {
+//     for (int i = 0; i < n; i++)
+//     {
+//         for (int c = 0; c <= i - 1; c++)
+//         {
+//             Write("   ");
+//         }
+//         for (int c = 0; c <= i; c++)
+//         {
+//             Write("   ");
+//             Write(factorial(i) / (factorial(c) * factorial(i - c)));
+//         }
+//         WriteLine();
+//     }
+// }
+
+// int factorial(int n)
+// {
+//     int f = 1;
+//     for (int i = 1; i <= n; i++)
+//     {
+//         f = f * i;
+//     }
+//     return f;
+// }
+
+
 

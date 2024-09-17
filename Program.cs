@@ -472,4 +472,67 @@ using static System.Console;
 
 // task 60 DZ Сформировать трёхмерный массив из неповторяющихся двузначных
 // чисел. Построчно вывести его, добавляя индексы каждого элемента.
+// Clear();
+// Write("Введите через пробел размеры матрицы (3 шт) ");
+// string[] size = ReadLine().Split(" ",StringSplitOptions.RemoveEmptyEntries);
+// int[,,] array = GetArray(int.Parse(size[0]),int.Parse(size[1]),int.Parse(size[2]),10,99);
+
+// PrintArray(array);
+
+// bool FindElement(int[,,] inArray, int el)
+// {
+//     for (int i = 0; i < inArray.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < inArray.GetLength(1); j++)
+//         {
+//             for (int k = 0; k < inArray.GetLength(2); k++)
+//             {
+//                 if (inArray[i, j, k] == el) return true;
+//             }
+//         }
+
+//     }
+//     return false;
+// }
+
+
+// int[,,] GetArray(int m, int n, int k, int min, int max)
+// {
+//     int[,,] result = new int[m, n, k];
+//     for (int i = 0; i < result.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < result.GetLength(1); j++)
+//         {
+//             int t = 0;
+//             while (t < result.GetLength(2))
+//             {
+//                 int el = new Random().Next(min, max + 1);
+//                 if (FindElement(result, el)) continue;
+//                 result[i, j, t] = el;
+//                 t++;
+//             }
+//         }
+
+//     }
+//     return result;
+// }
+
+// void PrintArray(int[,,] inArray)
+// {
+//     for (int i = 0; i < inArray.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < inArray.GetLength(1); j++)
+//         {
+//             for (int k = 0; k < inArray.GetLength(2); k++)
+//             {
+//                 Write($"{inArray[i, j, k]} ({i},{j},{k}) ");
+                
+//             }
+//             WriteLine();
+//         }
+//         WriteLine();
+//     }
+// }
+
+// task 62 DZ Заполните спирально массив 4 на 4.
 Clear();
